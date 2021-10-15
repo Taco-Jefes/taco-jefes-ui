@@ -1,25 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
+import { Container } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import TeamCounts from './components/TeamCounts';
+import TacoTalk from './components/TacoTalk';
+import { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { tacoCounts } from './actions/countActions'
+import { getComments } from './actions/commentActions'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  componentDidMount() {
+    this.props.tacoCounts();
+    this.props.getComments();
+    // this.props.fetchMembers();
+    // this.props.fetchJackpot();
+  }
+
+  render () {
+    return (
+      <Container>
+        <TeamCounts />
+        <TacoTalk />
+  
+      </Container>
+    );
+  }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => bindActionCreators({
+  tacoCounts,
+  getComments
+}, dispatch)
+
+
+export default connect(null, mapDispatchToProps)(App)
