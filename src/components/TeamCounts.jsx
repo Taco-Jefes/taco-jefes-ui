@@ -68,7 +68,7 @@ class TeamCounts extends Component {
                 </Row>
     
                 <Row xs={4}>
-                    <h2><Col>ACT: {this.props.teamACT}</Col></h2>
+                    <h2><Col>TACo: {this.props.teamACT}</Col></h2>
                     <h2><Col>HHS: {this.props.teamHHS}</Col></h2>
                     <h2><Col>TLC: {this.props.teamTLC}</Col></h2>
                     <h2><Col>RRP: {this.props.teamRR}</Col></h2>
