@@ -16,30 +16,33 @@ class TacoTalk extends Component {
 
     render() {
         return (
-            <Container>
+            <div className="comment-spacing">
+                <Container>
 
 
-                <Row >
-                    <Form onSubmit={this.handleCommentSubmit}>
-                        <Col>
-                            <Form.Group as={Col}>
-                                {/* <Form.Label htmlFor="draws"># Draws</Form.Label> */}
-                                <Form.Control type="text" id="comment" name="comment" placeholder="Please leave a comment." />
+                    <Row >
+                        <Form onSubmit={this.handleCommentSubmit}>
+                            <Col>
+                                <Form.Group as={Col}>
+                                    {/* <Form.Label htmlFor="draws"># Draws</Form.Label> */}
+                                    <Form.Control type="text" id="comment" name="comment" placeholder="Please leave a comment." />
+                                </Form.Group>
+                            </Col>
+                            <Col>
+                                <Button type="submit">Submit</Button>
+                            </Col>
+                        </Form>
+                    </Row>
 
-                            </Form.Group>
-                        </Col>
-                        <Col>
-                            <Button type="submit">Submit</Button>
-                        </Col>
-                    </Form>
-                </Row>
+                    <div className="comment-spacing">
+                        <Row>
+                            <h2 >Taco Smack Down:</h2>
+                            {this.props.comments.map((comment, i) => <CommentList key={i} comment={comment} />)}
 
-                <Row>
-                    <h2>Taco Smack Down:</h2>
-                    {this.props.comments.map((comment, i) => <CommentList key={i} comment={comment}/>)}
-              
-                </Row>
-            </Container>
+                        </Row>
+                    </div>
+                </Container>
+            </div>
 
         );
     }
