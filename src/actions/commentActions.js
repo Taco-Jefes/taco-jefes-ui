@@ -5,7 +5,9 @@ export const ADD_COMMENT = "ADD_COMMENT"
 
 // let targetURL = 'http://localhost:8080/api/comments'
 
-let targetURL = 'https://taco-track.herokuapp.com/api/comments'
+//let targetURL = 'https://taco-track.herokuapp.com/api/comments'
+
+let targetURL = 'http://ip-10-0-2-60.ec2.internal/api/comments'
 
 export const getComments = () => {
     return dispatch => {
