@@ -6,7 +6,7 @@ export const UPDATE_COUNTS = "UPDATE_COUNTS"
 
 //let targetURL = 'https://taco-track.herokuapp.com/api/tacos'
 
-let targetURL = 'http://ip-10-0-2-60.ec2.internal:8080/api/tacos'
+let targetURL = 'http://10.0.2.60:8080/api/tacos'
 
 export const tacoCounts = () => {
     return dispatch => {
